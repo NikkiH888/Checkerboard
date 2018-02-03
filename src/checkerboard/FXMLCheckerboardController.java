@@ -34,7 +34,7 @@ public class FXMLCheckerboardController implements Initializable, Startable {
     
     private pane.Checkerboard checkerboard;
     
-    private double offsetOfVBox = 51.5;
+    private double offsetOfVBox = 54.0;
      
     @FXML
     private VBox vBox; 
