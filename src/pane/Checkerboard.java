@@ -18,7 +18,7 @@ public class Checkerboard extends Anchor {
     //Fields
     private Color lightColor;
     private Color darkColor;
-    private GridPane gridPane = new GridPane();
+    private GridPane gridPane;
     
     public Checkerboard(int numRows, int numCols, double boardWidth, double boardHeight) {
         super(numRows, numCols, boardWidth, boardHeight);
@@ -43,10 +43,11 @@ public class Checkerboard extends Anchor {
     // Build the board UI and returns an AnchorPane as the root object
     @Override
     public AnchorPane build(double boardWidth, double boardHeight, int numRows, int numCols, Color lightColor, Color darkColor) {
-
+        
+        this.gridPane = new GridPane();
         super.build(boardWidth, boardHeight, numRows, numCols, lightColor, darkColor); // set sides of AnchorPane and other elements
         
-        clear(); // clear gridPane before using
+        clear(); // clear gridPane and anchorPane before using
         
         gridPane.setPrefWidth(boardWidth);
         gridPane.setPrefHeight(boardHeight);
@@ -80,5 +81,6 @@ public class Checkerboard extends Anchor {
 
     public void clear() { //clear the gridPane
         gridPane.getChildren().clear();
+        super.root.getChildren().clear();
     }
 }
